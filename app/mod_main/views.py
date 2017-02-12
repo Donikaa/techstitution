@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, Response, render_template, request, redirect, url_for
 from app import mongo
 from bson import ObjectId
 
@@ -47,11 +47,16 @@ def form():
 
 @mod_main.route('/list', methods=['GET'])
 def list():
-	return render_template('list.html')
+	db = mongo.db.arkep
+	rekordet = db.find()
+	return render_template('list.html', rekordet=rekordet)
 
-@mod_main.route('/remove', methods=['POST'])
-def remove():
-	return render_template('list.html')
+@mod_main.route('/remove/<string:remove_id>', methods=['POST'])
+def remove(remove_id):
+	db = mongo.db.arkep
+	remove = db.remove({"_id" : ObjectId(remove_id)})
+	#return redirect(url_for("main.list"))
+	return Response(200)
 
 @mod_main.route('/raporti/<string:report_id>')
 def raporti(report_id):

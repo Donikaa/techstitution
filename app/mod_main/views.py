@@ -1,20 +1,19 @@
 from flask import Blueprint, Response, render_template, request, redirect, url_for
 from app import mongo
 from bson import ObjectId
+from bson.json_util import dumps
 
 mod_main = Blueprint('main', __name__)
 
 
-
 @mod_main.route('/')
 def index():
-	
 	return render_template("index.html")
 
-@mod_main.route('/form', methods=['GET', 'POST'])
+@mod_main.route('/form',methods=['GET','POST'])
 def form():
 	if request.method == 'GET':
-		emri = "donikas"
+		emri="Roza"
 		return render_template("form.html", emri=emri)
 	elif request.method == 'POST':
 		db = mongo.db.arkep
@@ -40,28 +39,43 @@ def form():
 		}
 		print data
 		
-		db.insert(data) 
-		return render_template("form.html", mesazhi="Faleminderit, forma u insertua!")
+		db.insert(data)
+		return render_template("form.html", mesazhi="Faleminderit,forma u insertua!")
 	else:
-		return "Go drunk, you are home."
+		return"Go home, you're drunk"
 
 @mod_main.route('/list', methods=['GET'])
 def list():
-	db = mongo.db.arkep
-	rekordet = db.find()
+	db= mongo.db.arkep
+	rekordet=db.find()
 	return render_template('list.html', rekordet=rekordet)
 
+ #@mod_main.route('/remove/<string:remove_id>', methods=['POST'])
+#def remove(remove_id):
+   # db= mongo.db.arkep
+   # remove= db.remove({"_id" : ObjectId(remove_id)})
+	#return Response(200)
 @mod_main.route('/remove/<string:remove_id>', methods=['POST'])
 def remove(remove_id):
 	db = mongo.db.arkep
 	remove = db.remove({"_id" : ObjectId(remove_id)})
-	#return redirect(url_for("main.list"))
-	return Response(200)
+	if remove['n'] == 1:
+		return Response(response=dumps({"removed": True}),
+		status=200,
+		mimetype='application/json')
+	else:
+		return Response(response=dumps({"removed": False}),
+		status=500,
+		mimetype='application/json')
 
 @mod_main.route('/raporti/<string:report_id>')
 def raporti(report_id):
 	db = mongo.db.arkep
-	report = db.find_one({'_id':ObjectId(report_id)})
+	report=db.find_one({"_id": ObjectId(report_id)})
+
 	return render_template('raporti.html', report=report)
 
-	
+@mod_main.route('/home', methods=['GET'])
+def home():
+	db = mongo.db.arkep
+	return render_template('home.html', home=home)

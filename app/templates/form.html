@@ -1,32 +1,3076 @@
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
 {% extends 'index.html'%}
 {% block form %}
-<form method="POST">
+<div class="container-fluid">
+ <div class="card">
+<div class="row">
+		<form class="col s12" method="POST">
+			<div class="card-content">
+		<h4>Te dhenat per ndermarrje</h4>
+			<div class="row">
+				<div class="input-field col s12">
+					<input name="emri_ndermarrjes" id="emri_ndermarrjes" type="text" class="validate" required="">
+					<label for="first_name">Emri ndermarrjes</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12">
+					<input id="nr_regjistrimit" name="nr_regjistrimit" type="number" class="validate">
+					<label for="nr_regjistrimit">Numri i Regjistrimit</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12">
+					<input id="adresa" name="adresa" type="text" class="validate">
+					<label for="adresa">Adresa</label>
+				</div>
+			</div>
+						<div class="row">
+				<div class="input-field col s12">
+					<input id="personi_kontaktues" name="personi_kontaktues" type="text" class="validate">
+					<label for="personi_kontaktues">Personi kontaktues</label>
+				</div>
+						<div class="row">
+				<div class="input-field col s12">
+					<input id="telefoni" name="telefoni" type="number" class="validate">
+					<label for="telefoni">Telefoni</label>
+				</div>
+						<div class="row">
+				<div class="input-field col s12">
+					<input id="email" name="email" type="email" class="validate">
+					<label for="email">Email</label>
+				</div>
+<h4>Marrja e qasjes në rrjetin Global të Internetit nga ju si ISP</h4>
+<div class="alert alert-info">
+	<strong><p>SHËNIM: Seksioni 2 dhe 3 i referohet të dhënave për lidhjen e rrjetit tuaj si ISP me ISP tjera (me shumicë - wholesale) për marrjen dhe ofrimin e qasjes në rrejtin global të internetit. Seksioni 4, 5 dhe 6 i referohet të dhënave për ofrimin e shërbimit të qasjes përdoruesve fundor. Seksioni 7 i referohet të ardhurave sipas shërbimit, seksioni 8 ka të bëjë me investimet e bëra në fushën e telekomunikimeve, dhe seksioni 9 i referohet numrit të të punësuarve në ndërmarrje</p></strong> 
+</div>
+				<h6>Qasja në Internet Global realizohet nga:</h6>
+						 <p>
+			<input type="checkbox" id="test5" />
+			<label for="test5">ISP brenda Kosovës</label>
+		</p>
+								<p>
+			<input type="checkbox" id="test6" />
+			<label for="test6">ISP jashtë Kosovës</label>
+		</p>
+								<p>
+			<input type="checkbox" id="test7" />
+			<label for="test7">Rrjetë të tjerë</label>
+		</p>
+								<div class="row">
+				<div class="input-field col s12">
+					<input id="koment1" name="koment1" type="text" class="validate">
+					<label for="koment1">Komente</label>
+				</div>
 
-    Emri: <input name="emri" value=""><br />
+			 <h6>Kapaciteti dhe lloji i qasjes i marr nga ju si ISP</h6>
 
-    Emri ndermarrje: <input name="emri_ndermarrjes" value=""><br />
+			 <strong>Lidhje fikse satelitore - Specifiko brezin frekuencor</strong>
 
-    Nr. Regjistrimit: <input name="nr_regjistrimit" value=""><br />
+									 <div class="row">
+				<div class="input-field col s6">
+					<input id="sasia1" name="sasia1" type="number" class="validate">
+					<label for="sasia1">Sasia(Mbps)</label>
+				</div>
 
-    Adresa: <input name="adresa" value=""><br />
+										<div class="row">
+				<div class="input-field col s6">
+					<input id="tarifa1" name="tarifa1" type="number" class="validate">
+					<label for="tarifa1">Tarifa e marrjes së qasjes në internet sipas mënyrës</label>
+				</div>
 
-    Personi Kontaktues <input name="personi_kontaktues" value=""><br />
+				<strong>Lidhje fikse tokësore</strong>
 
-    Telefoni <input name="telefoni" value=""><br />
+													 <div class="row">
+				<div class="input-field col s6">
+					<input id="sasia2" name="sasia2" type="number" class="validate">
+					<label for="sasia2">Sasia(Mbps)</label>
+				</div>
 
-    
+										<div class="row">
+				<div class="input-field col s6">
+					<input id="tarifa2" name="tarifa2" type="number" class="validate">
+					<label for="tarifa2">Tarifa e marrjes së qasjes në internet sipas mënyrës</label>
+				</div>
 
-    Email <input name="email" value=""><br />
+				<strong>Lidhje me fibër optik</strong>
 
-    <button type="submit">
+													 <div class="row">
+				<div class="input-field col s6">
+					<input id="sasia3" name="sasia3" type="number" class="validate">
+					<label for="sasia3">Sasia(Mbps)</label>
+				</div>
 
-        Submit
+										<div class="row">
+				<div class="input-field col s6">
+					<input id="tarifa3" name="tarifa3" type="number" class="validate">
+					<label for="tarifa3">Tarifa e marrjes së qasjes në internet sipas mënyrës</label>
+				</div>
 
-    </button>
+				<strong>Lidhje kabllore</strong>
 
-</form>
+													 <div class="row">
+				<div class="input-field col s6">
+					<input id="sasia4" name="sasia4" type="number" class="validate">
+					<label for="sasia4">Sasia(Mbps)</label>
+				</div>
+
+										<div class="row">
+				<div class="input-field col s6">
+					<input id="tarifa4" name="tarifa4" type="number" class="validate">
+					<label for="tarifa4">Tarifa e marrjes së qasjes në internet sipas mënyrës</label>
+				</div>
+
+				<strong>Lidhje fikse mikrovalore (PTP) - Specifiko brezin frekuencor</strong>
+
+													 <div class="row">
+				<div class="input-field col s6">
+					<input id="sasia5" name="sasia5" type="number" class="validate">
+					<label for="sasia5">Sasia(Mbps)</label>
+				</div>
+
+										<div class="row">
+				<div class="input-field col s6">
+					<input id="tarifa5" name="tarifa5" type="number" class="validate">
+					<label for="tarifa5">Tarifa e marrjes së qasjes në internet sipas mënyrës</label>
+				</div>
+
+				<strong>Llojet tjera të qasjes (ju lutem jepni detaje)</strong>
+
+													 <div class="row">
+				<div class="input-field col s6">
+					<input id="sasia6" name="sasia6" type="number" class="validate">
+					<label for="sasia6">Sasia(Mbps)</label>
+				</div>
+
+										<div class="row">
+				<div class="input-field col s6">
+					<input id="tarifa6" name="tarifa6" type="number" class="validate">
+					<label for="tarifa6">Tarifa e marrjes së qasjes në internet sipas mënyrës</label>
+				</div>
+
+			<h4>Ofrimi i qasjes në Internet me shumicë për ISP-të tjera</h4>
+
+				<h6>ISP që marrin qasje në rrjetin tuaj:</h6>
+
+				<div class="row">
+				<div class="input-field col s6">
+					<input id="sasia7" name="sasia7" type="number" class="validate">
+					<label for="sasia7">Sasia</label>
+				</div>
+
+										<div class="row">
+				<div class="input-field col s6">
+					<input id="koment" name="koment" type="text" class="validate">
+					<label for="koment">Koment</label>
+				</div>
+
+
+				<h6>Kapaciteti dhe lloji i qasjes së ofruar ISP-ve</h6>
+
+				<strong>Lidhje fikse satelitore - Specifiko brezin frekuencor</strong>
+
+									 <div class="row">
+				<div class="input-field col s6">
+					<input id="sasia8" name="sasia8" type="number" class="validate">
+					<label for="sasia8">Sasia(Mbps)</label>
+				</div>
+
+										<div class="row">
+				<div class="input-field col s6">
+					<input id="tarifa7" name="tarifa7" type="number" class="validate">
+					<label for="tarifa7">Tarifa e marrjes së qasjes në internet sipas mënyrës</label>
+				</div>
+
+				<strong>Lidhje fikse tokësore</strong>
+
+													 <div class="row">
+				<div class="input-field col s6">
+					<input id="sasia9" name="sasia9" type="number" class="validate">
+					<label for="sasia9">Sasia(Mbps)</label>
+				</div>
+
+										<div class="row">
+				<div class="input-field col s6">
+					<input id="tarifa8" name="tarifa8" type="number" class="validate">
+					<label for="tarifa8">Tarifa e marrjes së qasjes në internet sipas mënyrës</label>
+				</div>
+
+				<strong>Lidhje me fibër optik</strong>
+
+													 <div class="row">
+				<div class="input-field col s6">
+					<input id="sasia10" name="sasia10" type="number" class="validate">
+					<label for="sasia10">Sasia(Mbps)</label>
+				</div>
+
+										<div class="row">
+				<div class="input-field col s6">
+					<input id="tarifa9" name="tarifa9" type="number" class="validate">
+					<label for="tarifa9">Tarifa e marrjes së qasjes në internet sipas mënyrës</label>
+				</div>
+
+				<strong>Lidhje kabllore</strong>
+
+													 <div class="row">
+				<div class="input-field col s6">
+					<input id="sasia11" name="sasia11" type="number" class="validate">
+					<label for="sasia11">Sasia(Mbps)</label>
+				</div>
+
+										<div class="row">
+				<div class="input-field col s6">
+					<input id="tarifa10" name="tarifa10" type="number" class="validate">
+					<label for="tarifa10">Tarifa e marrjes së qasjes në internet sipas mënyrës</label>
+				</div>
+
+				<strong>Lidhje fikse mikrovalore (PTP) - Specifiko brezin frekuencor</strong>
+
+													 <div class="row">
+				<div class="input-field col s6">
+					<input id="sasia12" name="sasia12" type="number" class="validate">
+					<label for="sasia12">Sasia(Mbps)</label>
+				</div>
+
+										<div class="row">
+				<div class="input-field col s6">
+					<input id="tarifa11" name="tarifa11" type="number" class="validate">
+					<label for="tarifa11">Tarifa e marrjes së qasjes në internet sipas mënyrës</label>
+				</div>
+
+				<strong>Llojet tjera të qasjes (ju lutem jepni detaje)</strong>
+
+													 <div class="row">
+				<div class="input-field col s6">
+					<input id="sasia13" name="sasia13" type="number" class="validate">
+					<label for="sasia13">Sasia(Mbps)</label>
+				</div>
+
+										<div class="row">
+				<div class="input-field col s6">
+					<input id="tarifa12" name="tarifa12" type="number" class="validate">
+					<label for="tarifa12">Tarifa e marrjes së qasjes në internet sipas mënyrës</label>
+				</div>
+
+				<h4>Ofrimi i qasjes në internet përdoruesve fundor</h4>
+
+				<strong>xDSL</strong>
+
+
+				<h6>shpejtësia < 1Mbps</h6>
+
+				<h6>Numri i linjave aktive</h6>
+
+
+				<div class="row">
+				<div class="input-field col s6">
+					<input id="individual" name="individual" type="number" class="validate">
+					<label for="individual">Individual</label>
+				</div>
+
+
+				<div class="row">
+				<div class="input-field col s6">
+					<input id="biznes" name="biznes" type="number" class="validate">
+					<label for="biznes">Biznes<label>
+				</div>
+
+
+				<div class="row">
+				<div class="input-field col s12">
+					<input id="totali" name="totali" type="number" class="validate">
+					<label for="totali">TOTALI</label>
+				</div>
+
+
+<h6>1Mbps ≤ shpejtësia < 2Mbps</h6>
+
+				<h6>Numri i linjave aktive</h6>
+
+
+				<div class="row">
+				<div class="input-field col s6">
+					<input id="individual1" name="individual1" type="number" class="validate">
+					<label for="individual1">Individual</label>
+				</div>
+
+
+				<div class="row">
+					<div class="input-field col s6">
+					<input id="biznes1" name="biznes1" type="number" class="validate">
+					<label for="biznes1">Biznes<label>
+				</div>
+
+
+				<div class="row">
+					<div class="input-field col s12">
+					<input id="totali1" name="totali1" type="number" class="validate">
+					<label for="totali1">TOTALI</label>
+				</div>
+
+
+
+							 <h6>2Mbps ≤ shpejtësia < 4Mbps</h6>
+
+				<h6>Numri i linjave aktive</h6>
+
+
+				<div class="row">
+					<div class="input-field col s6">
+					<input id="individual2" name="individual2" type="number" class="validate">
+					<label for="individual2">Individual</label>
+				</div>
+
+
+				<div class="row">
+					<div class="input-field col s6">
+					<input id="biznes2" name="biznes2" type="number" class="validate">
+					<label for="biznes2">Biznes<label>
+				</div>
+
+
+				<div class="row">
+					<div class="input-field col s12">
+					<input id="totali2" name="totali2" type="number" class="validate">
+					<label for="totali2">TOTALI</label>
+				</div>
+
+<h6>4Mbps ≤ shpejtësia < 8Mbps</h6>
+
+				<h6>Numri i linjave aktive</h6>
+
+
+				<div class="row">
+					<div class="input-field col s6">
+					<input id="individual3" name="individual3" type="number" class="validate">
+					<label for="individual3">Individual</label>
+				</div>
+
+
+				<div class="row">
+					<div class="input-field col s6">
+					<input id="biznes3" name="biznes3" type="number" class="validate">
+					<label for="biznes3">Biznes<label>
+				</div>
+
+
+				<div class="row">
+					<div class="input-field col s12">
+					<input id="totali3" name="totali3" type="number" class="validate">
+					<label for="totali3">TOTALI</label>
+				</div>
+
+
+
+
+
+							 <h6>8Mbps ≤ shpejtësia < 20Mbps</h6>
+
+				<h6>Numri i linjave aktive</h6>
+
+
+				<div class="row">
+					<div class="input-field col s6">
+					<input id="individual4" name="individual4" type="number" class="validate">
+					<label for="individual4">Individual</label>
+				</div>
+
+
+				<div class="row">
+					<div class="input-field col s6">
+					<input id="biznes4" name="biznes4" type="number" class="validate">
+					<label for="biznes4">Biznes<label>
+				</div>
+
+
+				<div class="row">
+					<div class="input-field col s12">
+					<input id="totali4" name="totali4" type="number" class="validate">
+					<label for="totali4">TOTALI</label>
+				</div>
+
+<h6>shpejtësia ≥ 20Mbps</h6>
+				<h6>Numri i linjave aktive</h6>
+
+				<div class="row">
+					<div class="input-field col s6">
+					<input id="individual5" name="individual5" type="number" class="validate">
+					<label for="individual5">Individual</label>
+				</div>
+
+				<div class="row">
+					<div class="input-field col s6">
+					<input id="biznes5" name="biznes5" type="number" class="validate">
+					<label for="biznes5">Biznes<label>
+				</div>
+
+				<div class="row">
+					<div class="input-field col s12">
+					<input id="totali5" name="totali5" type="number" class="validate">
+					<label for="totali5">TOTALI</label>
+				</div>
+
+	<strong>Modem Kabllor</strong>
+				<h6>shpejtësia < 1Mbps</h6>
+				<h6>Numri i linjave aktive</h6>
+
+				<div class="row">
+					<div class="input-field col s6">
+					<input id="individual6" name="individual6" type="number" class="validate">
+					<label for="individual6">Individual</label>
+				</div>
+
+				<div class="row">
+					<div class="input-field col s6">
+					<input id="biznes6" name="biznes6" type="number" class="validate">
+					<label for="biznes6">Biznes<label>
+				</div>
+
+				<div class="row">
+					<div class="input-field col s12">
+					<input id="totali6" name="totali6" type="number" class="validate">
+					<label for="totali6">TOTALI</label>
+				</div>
+
+<h6>1Mbps ≤ shpejtësia < 2Mbps</h6>
+	<h6>Numri i linjave aktive</h6>
+
+				<div class="row">
+					<div class="input-field col s6">
+					<input id="individual7" name="individual7" type="number" class="validate">
+					<label for="individual7">Individual</label>
+				</div>
+
+				<div class="row">
+					<div class="input-field col s6">
+					<input id="biznes7" name="biznes7" type="number" class="validate">
+					<label for="biznes7">Biznes<label>
+				</div>
+
+				<div class="row">
+					<div class="input-field col s12">
+					<input id="totali7" name="totali7" type="number" class="validate">
+					<label for="totali7">TOTALI</label>
+				</div>
+
+ <h6>2Mbps ≤ shpejtësia < 4Mbps</h6>
+	<h6>Numri i linjave aktive</h6>
+
+				<div class="row">
+					<div class="input-field col s6">
+					<input id="individual8" name="individual8" type="number" class="validate">
+					<label for="individual8">Individual</label>
+				</div>
+
+				<div class="row">
+					<div class="input-field col s6">
+					<input id="biznes8" name="biznes8" type="number" class="validate">
+					<label for="biznes8">Biznes<label>
+				</div>
+
+				<div class="row">
+					<div class="input-field col s12">
+					<input id="totali8" name="totali8" type="number" class="validate">
+					<label for="totali8">TOTALI</label>
+				</div>
+<h6>4Mbps ≤ shpejtësia < 8Mbps</h6>
+
+				<h6>Numri i linjave aktive</h6>
+				<div class="row">
+					<div class="input-field col s6">
+					<input id="individual9" name="individual9" type="number" class="validate">
+					<label for="individual9">Individual</label>
+				</div>
+
+				<div class="row">
+					<div class="input-field col s6">
+					<input id="biznes9" name="biznes9" type="number" class="validate">
+					<label for="biznes9">Biznes<label>
+				</div>
+
+				<div class="row">
+					<div class="input-field col s12">
+					<input id="totali9" name="totali9" type="number" class="validate">
+					<label for="totali9">TOTALI</label>
+				</div>
+
+	<h6>8Mbps ≤ shpejtësia < 20Mbps</h6>
+	<h6>Numri i linjave aktive</h6>
+				<div class="row">
+					<div class="input-field col s6">
+					<input id="individual10" name="individual10" type="number" class="validate">
+					<label for="individual10">Individual</label>
+				</div>
+
+
+				<div class="row">
+					<div class="input-field col s6">
+					<input id="biznes10" name="biznes10" type="number" class="validate">
+					<label for="biznes10">Biznes<label>
+				</div>
+
+
+				<div class="row">
+					<div class="input-field col s12">
+					<input id="totali10" name="totali10" type="number" class="validate">
+					<label for="totali10">TOTALI</label>
+				</div>
+
+ <h6>shpejtësia ≥ 20Mbps</h6>
+
+				<h6>Numri i linjave aktive</h6>
+
+				<div class="row">
+				<div class="input-field col s6">
+					<input id="individual11" name="individual11" type="number" class="validate">
+					<label for="individual11">Individual</label>
+				</div>
+
+				<div class="row">
+				<div class="input-field col s6">
+					<input id="biznes11" name="biznes11" type="number" class="validate">
+					<label for="biznes11">Biznes<label>
+				</div>
+
+				<div class="row">
+				<div class="input-field col s12">
+					<input id="totali11" name="totali11" type="number" class="validate">
+					<label for="totali11">TOTALI</label>
+				</div>
+
+				<strong>Lidhje wireless (FWA) - Specifiko brezin frekuencor</strong>
+
+				<h6>shpejtësia < 1Mbps</h6>
+
+				<h6>Numri i linjave aktive</h6>
+
+				<div class="row">
+				<div class="input-field col s6">
+					<input id="individual12" name="individual12" type="number" class="validate">
+					<label for="individual12">Individual</label>
+				</div>
+
+				<div class="row">
+				<div class="input-field col s6">
+					<input id="biznes12" name="biznes12" type="number" class="validate">
+					<label for="biznes12">Biznes<label>
+				</div>
+
+				<div class="row">
+				<div class="input-field col s12">
+					<input id="totali12" name="totali12" type="number" class="validate">
+					<label for="totali12">TOTALI</label>
+				</div>
+							 <h6>1Mbps ≤ shpejtësia < 2Mbps</h6>
+
+				<h6>Numri i linjave aktive</h6>
+
+				<div class="row">
+				<div class="input-field col s6">
+					<input id="individual13" name="individual13" type="number" class="validate">
+					<label for="individual13">Individual</label>
+				</div>
+
+
+				<div class="row">
+				<div class="input-field col s6">
+					<input id="biznes13" name="biznes13" type="number" class="validate">
+					<label for="biznes13">Biznes<label>
+				</div>
+
+
+				<div class="row">
+				<div class="input-field col s12">
+					<input id="totali13" name="totali13" type="number" class="validate">
+					<label for="totali13">TOTALI</label>
+				</div>
+
+							 <h6>2Mbps ≤ shpejtësia < 4Mbps</h6>
+
+				<h6>Numri i linjave aktive</h6>
+
+
+				<div class="row">
+				<div class="input-field col s6">
+					<input id="individual14" name="individual14" type="number" class="validate">
+					<label for="individual14">Individual</label>
+				</div>
+
+
+				<div class="row">
+				<div class="input-field col s6">
+					<input id="biznes14" name="biznes14" type="number" class="validate">
+					<label for="biznes14">Biznes<label>
+				</div>
+
+
+				<div class="row">
+				<div class="input-field col s12">
+					<input id="totali14" name="totali14" type="number" class="validate">
+					<label for="totali14">TOTALI</label>
+				</div>
+
+							 <h6>4Mbps ≤ shpejtësia < 8Mbps</h6>
+
+				<h6>Numri i linjave aktive</h6>
+
+
+				<div class="row">
+				<div class="input-field col s6">
+					<input id="individual15" name="individual15" type="number" class="validate">
+					<label for="individual15">Individual</label>
+				</div>
+
+
+				<div class="row">
+				<div class="input-field col s6">
+					<input id="biznes15" name="biznes15" type="number" class="validate">
+					<label for="biznes15">Biznes<label>
+				</div>
+
+
+				<div class="row">
+				<div class="input-field col s12">
+					<input id="totali15" name="totali15" type="number" class="validate">
+					<label for="totali15">TOTALI</label>
+				</div>
+
+							 <h6>8Mbps ≤ shpejtësia < 20Mbps</h6>
+
+				<h6>Numri i linjave aktive</h6>
+
+
+				<div class="row">
+				<div class="input-field col s6">
+					<input id="individual16" name="individual16" type="number" class="validate">
+					<label for="individual16">Individual</label>
+				</div>
+
+
+				<div class="row">
+				<div class="input-field col s6">
+					<input id="biznes16" name="biznes16" type="number" class="validate">
+					<label for="biznes16">Biznes<label>
+				</div>
+
+
+				<div class="row">
+				<div class="input-field col s12">
+					<input id="totali16" name="totali16" type="number" class="validate">
+					<label for="totali16">TOTALI</label>
+				</div>
+
+
+
+
+
+							 <h6>shpejtësia ≥ 20Mbps</h6>
+
+				<h6>Numri i linjave aktive</h6>
+
+
+				<div class="row">
+				<div class="input-field col s6">
+					<input id="individual17" name="individual17" type="number" class="validate">
+					<label for="individual17">Individual</label>
+				</div>
+
+
+				<div class="row">
+				<div class="input-field col s6">
+					<input id="biznes17" name="biznes17" type="number" class="validate">
+					<label for="biznes17">Biznes<label>
+				</div>
+
+
+				<div class="row">
+				<div class="input-field col s12">
+					<input id="totali17" name="totali17" type="number" class="validate">
+					<label for="totali17">TOTALI</label>
+				</div>
+
+
+
+
+
+
+				<strong>FTTH/B</strong>
+
+
+				<h6>shpejtësia < 1Mbps</h6>
+
+				<h6>Numri i linjave aktive</h6>
+
+
+				<div class="row">
+				<div class="input-field col s6">
+					<input id="individual18" name="individual18" type="number" class="validate">
+					<label for="individual18">Individual</label>
+				</div>
+
+
+				<div class="row">
+				<div class="input-field col s6">
+					<input id="biznes18" name="biznes18" type="number" class="validate">
+					<label for="biznes18">Biznes<label>
+				</div>
+
+
+				<div class="row">
+				<div class="input-field col s12">
+					<input id="totali18" name="totali18" type="number" class="validate">
+					<label for="totali18">TOTALI</label>
+				</div>
+
+
+
+
+
+							 <h6>1Mbps ≤ shpejtësia < 2Mbps</h6>
+
+				<h6>Numri i linjave aktive</h6>
+
+
+				<div class="row">
+				<div class="input-field col s6">
+					<input id="individual19" name="individual19" type="number" class="validate">
+					<label for="individual19">Individual</label>
+				</div>
+
+
+				<div class="row">
+				<div class="input-field col s6">
+					<input id="biznes19" name="biznes19" type="number" class="validate">
+					<label for="biznes19">Biznes<label>
+				</div>
+
+
+				<div class="row">
+				<div class="input-field col s12">
+					<input id="totali19" name="totali19" type="number" class="validate">
+					<label for="totali19">TOTALI</label>
+				</div>
+
+
+
+							 <h6>2Mbps ≤ shpejtësia < 4Mbps</h6>
+
+				<h6>Numri i linjave aktive</h6>
+
+
+				<div class="row">
+				<div class="input-field col s6">
+					<input id="individual20" name="individual20" type="number" class="validate">
+					<label for="individual20">Individual</label>
+				</div>
+
+
+				<div class="row">
+				<div class="input-field col s6">
+					<input id="biznes20" name="biznes20" type="number" class="validate">
+					<label for="biznes20">Biznes<label>
+				</div>
+
+
+				<div class="row">
+				<div class="input-field col s12">
+					<input id="totali20" name="totali20" type="number" class="validate">
+					<label for="totali20">TOTALI</label>
+				</div>
+
+
+
+
+
+							 <h6>4Mbps ≤ shpejtësia < 8Mbps</h6>
+
+				<h6>Numri i linjave aktive</h6>
+
+
+				<div class="row">
+				<div class="input-field col s6">
+					<input id="individual21" name="individual21" type="number" class="validate">
+					<label for="individual21">Individual</label>
+				</div>
+
+
+				<div class="row">
+				<div class="input-field col s6">
+					<input id="biznes21" name="biznes21" type="number" class="validate">
+					<label for="biznes21">Biznes<label>
+				</div>
+
+
+				<div class="row">
+				<div class="input-field col s12">
+					<input id="totali21" name="totali21" type="number" class="validate">
+					<label for="totali21">TOTALI</label>
+				</div>
+
+
+
+
+
+							 <h6>8Mbps ≤ shpejtësia < 20Mbps</h6>
+
+				<h6>Numri i linjave aktive</h6>
+
+
+				<div class="row">
+				<div class="input-field col s6">
+					<input id="individual22" name="individual22" type="number" class="validate">
+					<label for="individual22">Individual</label>
+				</div>
+
+
+				<div class="row">
+				<div class="input-field col s6">
+					<input id="biznes22" name="biznes22" type="number" class="validate">
+					<label for="biznes22">Biznes<label>
+				</div>
+
+
+				<div class="row">
+				<div class="input-field col s12">
+					<input id="totali22" name="totali22" type="number" class="validate">
+					<label for="totali22">TOTALI</label>
+				</div>
+
+<h6>shpejtësia ≥ 20Mbps</h6>
+
+				<h6>Numri i linjave aktive</h6>
+
+
+				<div class="row">
+				<div class="input-field col s6">
+					<input id="individual23" name="individual23" type="number" class="validate">
+					<label for="individual23">Individual</label>
+				</div>
+
+
+				<div class="row">
+				<div class="input-field col s6">
+					<input id="biznes23" name="biznes23" type="number" class="validate">
+					<label for="biznes23">Biznes<label>
+				</div>
+
+
+				<div class="row">
+				<div class="input-field col s12">
+					<input id="totali23" name="totali23" type="number" class="validate">
+					<label for="totali23">TOTALI</label>
+				</div>
+				<h4>Numri i përdoruesve fundor në Regjione</h4>
+	
+ <h4>Regjioni: Prishtina</h4>
+
+<strong>Komuna: Prishtina</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="xDSL24" name="xDSL24" type="number" class="validate" required>
+
+					<label for="xDSL24">xDSL</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor24" name="Kabllor24" type="number" class="validate" required="">
+
+					<label for="Kabllor24">Kabllor</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="FWA24" name="FWA24" type="number" class="validate" required="">
+
+					<label for="FWA24">FWA</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx24" name="FFTHx24" type="number" class="validate" required="">
+
+					<label for="FFTHx24">FFTHx</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s12">
+
+					<input id="totali27" name="totali27" type="number" class="validate" required="">
+
+					<label for="totali27">Totali</label>
+
+				</div>
+
+				<strong>Komuna: Podujeva</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="xDSL25" name="xDSL25" type="number" class="validate" required="">
+
+					<label for="xDSL25">xDSL</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor25" name="Kabllor25" type="number" class="validate" required="">
+
+					<label for="Kabllor25">Kabllor</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="FWA25" name="FWA25" type="number" class="validate" required="">
+
+					<label for="FWA25">FWA</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx25" name="FFTHx25" type="number" class="validate" required="">
+
+					<label for="FFTHx25">FFTHx</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s12">
+
+					<input id="totali28" name="totali28" type="number" class="validate" required="">
+
+					<label for="totali28">Totali</label>
+
+				</div>
+
+				<strong>Komuna: Drenasi</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="xDSL26" name="xDSL26" type="number" class="validate" required="">
+
+					<label for="xDSL26">xDSL</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor26" name="Kabllor26" type="number" class="validate" required="">
+
+					<label for="Kabllor26">Kabllor</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="FWA26" name="FWA26" type="number" class="validate" required="">
+
+					<label for="FWA26">FWA</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx26" name="FFTHx26" type="number" class="validate" required="">
+
+					<label for="FFTHx26">FFTHx</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s12">
+
+					<input id="totali29" name="totali29" type="number" class="validate" required="">
+
+					<label for="totali29">Totali</label>
+
+				</div>
+
+				<strong>Komuna: Fushe Kosova</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="xDSL27" name="xDSL27" type="number" class="validate" required="">
+
+					<label for="xDSL27">xDSL</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor27" name="Kabllor27" type="number" class="validate" required="">
+
+					<label for="Kabllor27">Kabllor</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="FWA27" name="FWA27" type="number" class="validate" required="">
+
+					<label for="FWA27">FWA</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx27" name="FFTHx27" type="number" class="validate" required="">
+
+					<label for="FFTHx27">FFTHx</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s12">
+
+					<input id="totali30" name="totali30" type="number" class="validate" required="">
+
+					<label for="totali30">Totali</label>
+
+				</div>
+
+				<strong>Komuna: Obiliqi</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="xDSL28" name="xDSL28" type="number" class="validate" required="">
+
+					<label for="xDSL28">xDSL</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor28" name="Kabllor28" type="number" class="validate" required="">
+
+					<label for="Kabllor28">Kabllor</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="FWA28" name="FWA28" type="number" class="validate" required="">
+
+					<label for="FWA28">FWA</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx28" name="FFTHx28" type="number" class="validate" required="">
+
+					<label for="FFTHx28">FFTHx</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s12">
+
+					<input id="totali31" name="totali31" type="number" class="validate" required="">
+
+					<label for="totali31">Totali</label>
+
+				</div>
+
+				<strong>Komuna: Lipjani</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="xDSL29" name="xDSL29" type="number" class="validate" required="">
+
+					<label for="xDSL29">xDSL</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor29" name="Kabllor29" type="number" class="validate" required="">
+
+					<label for="Kabllor29">Kabllor</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="FWA29" name="FWA29" type="number" class="validate" required="">
+
+					<label for="FWA29">FWA</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx29" name="FFTHx29" type="number" class="validate" required="">
+
+					<label for="FFTHx29">FFTHx</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s12">
+
+					<input id="totali32" name="totali32" type="number" class="validate" required="">
+
+					<label for="totali32">Totali</label>
+
+				</div>
+
+				<strong>Komuna: Graçanica</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="xDSL30" name="xDSL30" type="number" class="validate" required="">
+
+					<label for="xDSL30">xDSL</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor30" name="Kabllor30" type="number" class="validate" required="">
+
+					<label for="Kabllor30">Kabllor</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="FWA30" name="FWA30" type="number" class="validate" required="">
+
+					<label for="FWA30">FWA</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx30" name="FFTHx30" type="number" class="validate" required="">
+
+					<label for="FFTHx30">FFTHx</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s12">
+
+					<input id="totali33" name="totali33" type="number" class="validate" required="">
+
+					<label for="totali33">Totali</label>
+
+				</div>
+
+				<strong>Komuna: Novobërda</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="xDSL31" name="xDSL31" type="number" class="validate" required="">
+
+					<label for="xDSL31">xDSL</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor31" name="Kabllor31" type="number" class="validate" required="">
+
+					<label for="Kabllor31">Kabllor</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="FWA31" name="FWA31" type="number" class="validate" required="">
+
+					<label for="FWA31">FWA</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx31" name="FFTHx31" type="number" class="validate" required="">
+
+					<label for="FFTHx31">FFTHx</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s12">
+
+					<input id="totali34" name="totali34" type="number" class="validate" required="">
+
+					<label for="totali34">Totali</label>
+
+				</div>
+
+				<h4>Regjioni: Mitrovica</h4>
+
+<strong>Komuna: Mitrovica</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="xDSL32" name="xDSL32" type="number" class="validate" required="">
+
+					<label for="xDSL32">xDSL</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor32" name="Kabllor32" type="number" class="validate" required="">
+
+					<label for="Kabllor32">Kabllor</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="FWA32" name="FWA32" type="number" class="validate" required="">
+
+					<label for="FWA32">FWA</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx32" name="FFTHx32" type="number" class="validate" required="">
+
+					<label for="FFTHx32">FFTHx</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s12">
+
+					<input id="totali35" name="totali35" type="number" class="validate" required="">
+
+					<label for="totali35">Totali</label>
+
+				</div>
+
+				<strong>Komuna: Vushtrria</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="xDSL33" name="xDSL33" type="number" class="validate" required="">
+
+					<label for="xDSL33">xDSL</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor33" name="Kabllor33" type="number" class="validate" required="">
+
+					<label for="Kabllor33">Kabllor</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="FWA33" name="FWA33" type="number" class="validate" required="">
+
+					<label for="FWA33">FWA</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx33" name="FFTHx33" type="number" class="validate" required="">
+
+					<label for="FFTHx33">FFTHx</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s12">
+
+					<input id="totali36" name="totali36" type="number" class="validate" required="">
+
+					<label for="totali36">Totali</label>
+
+				</div>
+
+				<strong>Komuna: Skenderaji</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="xDSL34" name="xDSL34" type="number" class="validate" required="">
+
+					<label for="xDSL34">xDSL</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor34" name="Kabllor34" type="number" class="validate" required="">
+
+					<label for="Kabllor34">Kabllor</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="FWA34" name="FWA34" type="number" class="validate" required="">
+
+					<label for="FWA34">FWA</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx34" name="FFTHx34" type="number" class="validate" required="">
+
+					<label for="FFTHx34">FFTHx</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s12">
+
+					<input id="totali37" name="totali37" type="number" class="validate" required="">
+
+					<label for="totali37">Totali</label>
+
+				</div>
+
+				<strong>Komuna: Zubin Potok</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="xDSL35" name="xDSL35" type="number" class="validate" required="">
+
+					<label for="xDSL35">xDSL</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor35" name="Kabllor35" type="number" class="validate" required="">
+
+					<label for="Kabllor35">Kabllor</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="FWA35" name="FWA35" type="number" class="validate" required="">
+
+					<label for="FWA35">FWA</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx35" name="FFTHx35" type="number" class="validate" required="">
+
+					<label for="FFTHx35">FFTHx</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s12">
+
+					<input id="totali38" name="totali38" type="number" class="validate" required="">
+
+					<label for="totali38">Totali</label>
+
+				</div>
+
+				<strong>Komuna: Zveçan</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="xDSL36" name="xDSL36" type="number" class="validate" required="">
+
+					<label for="xDSL36">xDSL</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor36" name="Kabllor36" type="number" class="validate" required="">
+
+					<label for="Kabllor36">Kabllor</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="FWA36" name="FWA36" type="number" class="validate" required="">
+
+					<label for="FWA36">FWA</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx36" name="FFTHx36" type="number" class="validate" required="">
+
+					<label for="FFTHx36">FFTHx</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s12">
+
+					<input id="totali39" name="totali39" type="number" class="validate" required="">
+
+					<label for="totali39">Totali</label>
+
+				</div>
+
+				 <strong>Komuna: Leposaviqi</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="xDSL37" name="xDSL37" type="number" class="validate" required="">
+
+					<label for="xDSL37">xDSL</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor37" name="Kabllor37" type="number" class="validate" required="">
+
+					<label for="Kabllor37">Kabllor</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="FWA37" name="FWA37" type="number" class="validate" required="">
+
+					<label for="FWA37">FWA</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx37" name="FFTHx37" type="number" class="validate" required="">
+
+					<label for="FFTHx37">FFTHx</label>
+
+				</div>
+
+					<div class="row">
+
+				<div class="input-field col s12">
+
+					<input id="totali40" name="totali40" type="number" class="validate" required="">
+
+					<label for="totali40">Totali</label>
+
+				</div>
+
+				<h4>Regjioni: Peja</h4>
+
+<strong>Komuna: Peja</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				
+				<div class="input-field col s3s">
+
+					<input id="xDSL32" name="xDSL32" type="number" class="validate" required="">
+
+					<label for="xDSL32">xDSL</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor32" name="Kabllor32" type="number" class="validate" required="">
+
+					<label for="Kabllor32">Kabllor</label>
+
+				</div>
+				
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FWA32" name="FWA32" type="number" class="validate" required="">
+
+					<label for="FWA32">FWA</label>
+
+				</div>
+				
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx32" name="FFTHx32" type="number" class="validate" required="">
+
+					<label for="FFTHx32">FFTHx</label>
+
+				</div>
+				</div>
+
+					<div class="input-field col s12">
+
+					<input id="totali35" name="totali35" type="number" class="validate" required="">
+
+					<label for="totali35">Totali</label>
+
+				</div>
+
+
+
+<strong>Komuna: Gjakova</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				
+
+				<div class="input-field col s3">
+
+					<input id="xDSL32" name="xDSL32" type="number" class="validate" required="">
+
+					<label for="xDSL32">xDSL</label>
+</div>
+				
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor32" name="Kabllor32" type="number" class="validate" required="">
+
+					<label for="Kabllor32">Kabllor</label>
+
+				</div>
+
+				
+
+				<div class="input-field col s3">
+
+					<input id="FWA32" name="FWA32" type="number" class="validate" required="">
+
+					<label for="FWA32">FWA</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx32" name="FFTHx32" type="number" class="validate" required="">
+
+					<label for="FFTHx32">FFTHx</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s12">
+
+					<input id="totali35" name="totali35" type="number" class="validate" required="">
+
+					<label for="totali35">Totali</label>
+
+				</div>
+
+
+
+<strong>Komuna: Deçani</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				
+
+				<div class="input-field col s3">
+
+					<input id="xDSL32" name="xDSL32" type="number" class="validate" required="">
+
+					<label for="xDSL32">xDSL</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor32" name="Kabllor32" type="number" class="validate" required="">
+
+					<label for="Kabllor32">Kabllor</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FWA32" name="FWA32" type="number" class="validate" required="">
+
+					<label for="FWA32">FWA</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx32" name="FFTHx32" type="number" class="validate" required="">
+
+					<label for="FFTHx32">FFTHx</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s12">
+
+					<input id="totali35" name="totali35" type="number" class="validate" required="">
+
+					<label for="totali35">Totali</label>
+
+				</div>
+
+				<strong>Komuna: Klina</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				
+
+				<div class="input-field col s3">
+
+					<input id="xDSL32" name="xDSL32" type="number" class="validate" required="">
+
+					<label for="xDSL32">xDSL</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor32" name="Kabllor32" type="number" class="validate" required="">
+
+					<label for="Kabllor32">Kabllor</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FWA32" name="FWA32" type="number" class="validate" required="">
+
+					<label for="FWA32">FWA</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx32" name="FFTHx32" type="number" class="validate" required="">
+
+					<label for="FFTHx32">FFTHx</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s12">
+
+					<input id="totali35" name="totali35" type="number" class="validate" required="">
+
+					<label for="totali35">Totali</label>
+
+				</div>
+
+				<strong>Komuna: Istogu</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				
+
+				<div class="input-field col s3">
+
+					<input id="xDSL32" name="xDSL32" type="number" class="validate" required="">
+
+					<label for="xDSL32">xDSL</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor32" name="Kabllor32" type="number" class="validate" required="">
+
+					<label for="Kabllor32">Kabllor</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FWA32" name="FWA32" type="number" class="validate" required="">
+
+					<label for="FWA32">FWA</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx32" name="FFTHx32" type="number" class="validate" required="">
+
+					<label for="FFTHx32">FFTHx</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s12">
+
+					<input id="totali35" name="totali35" type="number" class="validate" required="">
+
+					<label for="totali35">Totali</label>
+
+				</div>
+
+				<strong>Komuna: Juniku</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				
+
+				<div class="input-field col s3">
+
+					<input id="xDSL32" name="xDSL32" type="number" class="validate" required="">
+
+					<label for="xDSL32">xDSL</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor32" name="Kabllor32" type="number" class="validate" required="">
+
+					<label for="Kabllor32">Kabllor</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FWA32" name="FWA32" type="number" class="validate" required="">
+
+					<label for="FWA32">FWA</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx32" name="FFTHx32" type="number" class="validate" required="">
+
+					<label for="FFTHx32">FFTHx</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s12">
+
+					<input id="totali35" name="totali35" type="number" class="validate" required="">
+
+					<label for="totali35">Totali</label>
+
+				</div>
+
+				<strong>Komuna: Rahoveci</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				
+
+				<div class="input-field col s3">
+
+					<input id="xDSL32" name="xDSL32" type="number" class="validate" required="">
+
+					<label for="xDSL32">xDSL</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor32" name="Kabllor32" type="number" class="validate" required="">
+
+					<label for="Kabllor32">Kabllor</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FWA32" name="FWA32" type="number" class="validate" required="">
+
+					<label for="FWA32">FWA</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx32" name="FFTHx32" type="number" class="validate" required="">
+
+					<label for="FFTHx32">FFTHx</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s12">
+
+					<input id="totali35" name="totali35" type="number" class="validate" required="">
+
+					<label for="totali35">Totali</label>
+
+				</div>
+
+<h4>Regjioni: Prizreni</h4>
+				<strong>Komuna: Prizreni</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				
+
+				<div class="input-field col s3">
+
+					<input id="xDSL32" name="xDSL32" type="number" class="validate" required="">
+
+					<label for="xDSL32">xDSL</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor32" name="Kabllor32" type="number" class="validate" required="">
+
+					<label for="Kabllor32">Kabllor</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FWA32" name="FWA32" type="number" class="validate" required="">
+
+					<label for="FWA32">FWA</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx32" name="FFTHx32" type="number" class="validate" required="">
+
+					<label for="FFTHx32">FFTHx</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s12">
+
+					<input id="totali35" name="totali35" type="number" class="validate" required="">
+
+					<label for="totali35">Totali</label>
+
+				</div>
+
+				<strong>Komuna: Suhareka</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				
+
+				<div class="input-field col s3">
+
+					<input id="xDSL32" name="xDSL32" type="number" class="validate" required="">
+
+					<label for="xDSL32">xDSL</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor32" name="Kabllor32" type="number" class="validate" required="">
+
+					<label for="Kabllor32">Kabllor</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FWA32" name="FWA32" type="number" class="validate" required="">
+
+					<label for="FWA32">FWA</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx32" name="FFTHx32" type="number" class="validate" required="">
+
+					<label for="FFTHx32">FFTHx</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s12">
+
+					<input id="totali35" name="totali35" type="number" class="validate" required="">
+
+					<label for="totali35">Totali</label>
+
+				</div>
+
+				<strong>Komuna: Dragashi</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				
+
+				<div class="input-field col s3">
+
+					<input id="xDSL32" name="xDSL32" type="number" class="validate" required="">
+
+					<label for="xDSL32">xDSL</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor32" name="Kabllor32" type="number" class="validate" required="">
+
+					<label for="Kabllor32">Kabllor</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FWA32" name="FWA32" type="number" class="validate" required="">
+
+					<label for="FWA32">FWA</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx32" name="FFTHx32" type="number" class="validate" required="">
+
+					<label for="FFTHx32">FFTHx</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s12">
+
+					<input id="totali35" name="totali35" type="number" class="validate" required="">
+
+					<label for="totali35">Totali</label>
+
+				</div>
+
+				<strong>Komuna: Malisheva</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				
+
+				<div class="input-field col s3">
+
+					<input id="xDSL32" name="xDSL32" type="number" class="validate" required="">
+
+					<label for="xDSL32">xDSL</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor32" name="Kabllor32" type="number" class="validate" required="">
+
+					<label for="Kabllor32">Kabllor</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FWA32" name="FWA32" type="number" class="validate" required="">
+
+					<label for="FWA32">FWA</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx32" name="FFTHx32" type="number" class="validate" required="">
+
+					<label for="FFTHx32">FFTHx</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s12">
+
+					<input id="totali35" name="totali35" type="number" class="validate" required="">
+
+					<label for="totali35">Totali</label>
+
+				</div>
+				
+				<strong>Komuna: Mamusha</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				
+
+				<div class="input-field col s3">
+
+					<input id="xDSL32" name="xDSL32" type="number" class="validate" required="">
+
+					<label for="xDSL32">xDSL</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor32" name="Kabllor32" type="number" class="validate" required="">
+
+					<label for="Kabllor32">Kabllor</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FWA32" name="FWA32" type="number" class="validate" required="">
+
+					<label for="FWA32">FWA</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx32" name="FFTHx32" type="number" class="validate" required="">
+
+					<label for="FFTHx32">FFTHx</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s12">
+
+					<input id="totali35" name="totali35" type="number" class="validate" required="">
+
+					<label for="totali35">Totali</label>
+
+				</div>
+				<h4>Regjioni: Gjilani</h4>
+				<strong>Komuna: Gjilani </strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				
+
+				<div class="input-field col s3">
+
+					<input id="xDSL32" name="xDSL32" type="number" class="validate" required="">
+
+					<label for="xDSL32">xDSL</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor32" name="Kabllor32" type="number" class="validate" required="">
+
+					<label for="Kabllor32">Kabllor</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FWA32" name="FWA32" type="number" class="validate" required="">
+
+					<label for="FWA32">FWA</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx32" name="FFTHx32" type="number" class="validate" required="">
+
+					<label for="FFTHx32">FFTHx</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s12">
+
+					<input id="totali35" name="totali35" type="number" class="validate" required="">
+
+					<label for="totali35">Totali</label>
+
+				</div>
+
+				<strong>Komuna: Ferizaji</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				
+
+				<div class="input-field col s3">
+
+					<input id="xDSL32" name="xDSL32" type="number" class="validate" required="">
+
+					<label for="xDSL32">xDSL</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor32" name="Kabllor32" type="number" class="validate" required="">
+
+					<label for="Kabllor32">Kabllor</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FWA32" name="FWA32" type="number" class="validate" required="">
+
+					<label for="FWA32">FWA</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx32" name="FFTHx32" type="number" class="validate" required="">
+
+					<label for="FFTHx32">FFTHx</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s12">
+
+					<input id="totali35" name="totali35" type="number" class="validate" required="">
+
+					<label for="totali35">Totali</label>
+
+				</div>
+				
+				<strong>Komuna: Vitia</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				
+
+				<div class="input-field col s3">
+
+					<input id="xDSL32" name="xDSL32" type="number" class="validate" required="">
+
+					<label for="xDSL32">xDSL</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor32" name="Kabllor32" type="number" class="validate" required="">
+
+					<label for="Kabllor32">Kabllor</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FWA32" name="FWA32" type="number" class="validate" required="">
+
+					<label for="FWA32">FWA</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx32" name="FFTHx32" type="number" class="validate" required="">
+
+					<label for="FFTHx32">FFTHx</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s12">
+
+					<input id="totali35" name="totali35" type="number" class="validate" required="">
+
+					<label for="totali35">Totali</label>
+
+				</div>
+
+				<strong>Komuna: Kamenica</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				
+
+				<div class="input-field col s3">
+
+					<input id="xDSL32" name="xDSL32" type="number" class="validate" required="">
+
+					<label for="xDSL32">xDSL</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor32" name="Kabllor32" type="number" class="validate" required="">
+
+					<label for="Kabllor32">Kabllor</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FWA32" name="FWA32" type="number" class="validate" required="">
+
+					<label for="FWA32">FWA</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx32" name="FFTHx32" type="number" class="validate" required="">
+
+					<label for="FFTHx32">FFTHx</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s12">
+
+					<input id="totali35" name="totali35" type="number" class="validate" required="">
+
+					<label for="totali35">Totali</label>
+
+				</div>
+
+				<strong>Komuna: Hani i Elezit</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				
+
+				<div class="input-field col s3">
+
+					<input id="xDSL32" name="xDSL32" type="number" class="validate" required="">
+
+					<label for="xDSL32">xDSL</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor32" name="Kabllor32" type="number" class="validate" required="">
+
+					<label for="Kabllor32">Kabllor</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FWA32" name="FWA32" type="number" class="validate" required="">
+
+					<label for="FWA32">FWA</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx32" name="FFTHx32" type="number" class="validate" required="">
+
+					<label for="FFTHx32">FFTHx</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s12">
+
+					<input id="totali35" name="totali35" type="number" class="validate" required="">
+
+					<label for="totali35">Totali</label>
+
+				</div>
+
+
+				<strong>Komuna: Kaçaniku</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				
+
+				<div class="input-field col s3">
+
+					<input id="xDSL32" name="xDSL32" type="number" class="validate" required="">
+
+					<label for="xDSL32">xDSL</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor32" name="Kabllor32" type="number" class="validate" required="">
+
+					<label for="Kabllor32">Kabllor</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FWA32" name="FWA32" type="number" class="validate" required="">
+
+					<label for="FWA32">FWA</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx32" name="FFTHx32" type="number" class="validate" required="">
+
+					<label for="FFTHx32">FFTHx</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s12">
+
+					<input id="totali35" name="totali35" type="number" class="validate" required="">
+
+					<label for="totali35">Totali</label>
+
+				</div>
+
+					<strong>Komuna: Shtime</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				
+
+				<div class="input-field col s3">
+
+					<input id="xDSL32" name="xDSL32" type="number" class="validate" required="">
+
+					<label for="xDSL32">xDSL</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor32" name="Kabllor32" type="number" class="validate" required="">
+
+					<label for="Kabllor32">Kabllor</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FWA32" name="FWA32" type="number" class="validate" required="">
+
+					<label for="FWA32">FWA</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx32" name="FFTHx32" type="number" class="validate" required="">
+
+					<label for="FFTHx32">FFTHx</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s12">
+
+					<input id="totali35" name="totali35" type="number" class="validate" required="">
+
+					<label for="totali35">Totali</label>
+
+				</div>
+
+					<strong>Komuna: Shtërpc</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				
+
+				<div class="input-field col s3">
+
+					<input id="xDSL32" name="xDSL32" type="number" class="validate" required="">
+
+					<label for="xDSL32">xDSL</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor32" name="Kabllor32" type="number" class="validate" required="">
+
+					<label for="Kabllor32">Kabllor</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FWA32" name="FWA32" type="number" class="validate" required="">
+
+					<label for="FWA32">FWA</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx32" name="FFTHx32" type="number" class="validate" required="">
+
+					<label for="FFTHx32">FFTHx</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s12">
+
+					<input id="totali35" name="totali35" type="number" class="validate" required="">
+
+					<label for="totali35">Totali</label>
+
+				</div>
+
+				<strong>Komuna: Kllokoti</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				
+
+				<div class="input-field col s3">
+
+					<input id="xDSL32" name="xDSL32" type="number" class="validate" required="">
+
+					<label for="xDSL32">xDSL</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor32" name="Kabllor32" type="number" class="validate" required="">
+
+					<label for="Kabllor32">Kabllor</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FWA32" name="FWA32" type="number" class="validate" required="">
+
+					<label for="FWA32">FWA</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx32" name="FFTHx32" type="number" class="validate" required="">
+
+					<label for="FFTHx32">FFTHx</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s12">
+
+					<input id="totali35" name="totali35" type="number" class="validate" required="">
+
+					<label for="totali35">Totali</label>
+
+				</div>
+
+				<strong>Komuna: Ranilugu</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				
+
+				<div class="input-field col s3">
+
+					<input id="xDSL32" name="xDSL32" type="number" class="validate" required="">
+
+					<label for="xDSL32">xDSL</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor32" name="Kabllor32" type="number" class="validate" required="">
+
+					<label for="Kabllor32">Kabllor</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FWA32" name="FWA32" type="number" class="validate" required="">
+
+					<label for="FWA32">FWA</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx32" name="FFTHx32" type="number" class="validate" required="">
+
+					<label for="FFTHx32">FFTHx</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s12">
+
+					<input id="totali35" name="totali35" type="number" class="validate" required="">
+
+					<label for="totali35">Totali</label>
+
+				</div>
+
+				<strong>Komuna: Parteshi</strong>
+
+<h5>Numri i linjave aktive</h5>
+
+				
+
+				<div class="input-field col s3">
+
+					<input id="xDSL32" name="xDSL32" type="number" class="validate" required="">
+
+					<label for="xDSL32">xDSL</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="Kabllor32" name="Kabllor32" type="number" class="validate" required="">
+
+					<label for="Kabllor32">Kabllor</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FWA32" name="FWA32" type="number" class="validate" required="">
+
+					<label for="FWA32">FWA</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s3">
+
+					<input id="FFTHx32" name="FFTHx32" type="number" class="validate" required="">
+
+					<label for="FFTHx32">FFTHx</label>
+
+				</div>
+
+					
+
+				<div class="input-field col s12">
+
+					<input id="totali35" name="totali35" type="number" class="validate" required="">
+
+					<label for="totali35">Totali</label>
+
+				</div>
+				</div>
+
+
+
+<div class="alert alert-info">
+	<strong>
+	<p>
+		SHËNIM:Në pikën 6.2 duhet të jepen tarifat për ofertat e pershkruara si dhe detaje lidhur me kapacitetin e ofruar Upload/Download të cilat aktualisht i ofrohen përdoruesve fundor(në koleonën "Pershkrimi").Çmimet duhet të jepen në  euro, duke përfshirë TVSh-në.Në pikat 6.2.8 dhe 6.2.9 duhe të jepni tarifën e ofertavës me kapacitet minimial të rekalmuar respektivisht maksimal.Në seksionin 8 duhet te specifikohen investime e bëra per përmirësim/zhvillimin e infrastrukturës dhe sherbimeve telekomunikuese.Në këte kategori nuk duhen të përfshihen shpenzimete administrative(pagat,tatimet,mirmbajtjet etj). 
+	</p> 
+	</strong>
+</div>
+				<h4>Të ardhurat në total sipas shërbimeve për tremujorin përkatës - pa TVSh</h4>
+
+				<h6>Lloji i shërbimit</h6>
+
+				<strong>Të ardhurat nga shërbimet me pakicë (përdor. fundor)</strong>
+
+				 <div class="row">
+				<div class="input-field col s6">
+					<input id="sasia14" name="sasia14" type="number" class="validate" required="">
+					<label for="sasia14">Sasia(€)</label>
+					</div>
+				</div>
+
+										<div class="row">
+				<div class="input-field col s6">
+					<input id="koment2" name="koment2" type="text" class="validate">
+					<label for="koment2">Koment</label>
+				</div>
+				</div>
+
+
+				<strong>Të ardhurat nga shërbimet me shumicë (ISP-ve tjera)</strong>
+
+
+								 <div class="row">
+				<div class="input-field col s6">
+					<input id="sasia15" name="sasia15" type="number" class="validate" required="">
+					<label for="sasia15">Sasia(€)</label>
+					</div>
+
+										
+				<div class="input-field col s6">
+					<input id="koment3" name="koment3" type="text" class="validate">
+					<label for="koment3">Koment</label>
+				</div>
+				
+
+
+				<strong>TOTALI</strong>
+
+
+										<div class="row">
+				<div class="input-field col s12">
+					<input id="totali24" name="totali24" type="number" class="validate" required="">
+					<label for="totali24">(Shumice + Pakice)</label>
+				</div>
+				</div>
+
+				<h4>Investimet në shërbime dhe infrastrukturën telekomunikuese</h4>
+
+		 <h6>Lloji i investimit</h6>
+
+
+		 <strong>Investime në mjete jo të prekshme, si p.sh. Licenca, etj.</strong>
+
+
+											<div class="row">
+				<div class="input-field col s6">
+					<input id="sasia16" name="sasia16" type="number" class="validate" required="">
+					<label for="sasia16">Sasia(€)</label>
+					</div>
+					</div>
+
+										<div class="row">
+				<div class="input-field col s6">
+					<input id="koment4" name="koment4" type="text" class="validate">
+					<label for="koment4">Koment</label>
+				</div>
+				</div>
+
+
+
+		 <strong>Investime në infrastrukturë - Rrjetin backbone</strong>
+
+
+											<div class="row">
+				<div class="input-field col s6">
+					<input id="sasia17" name="sasia17" type="number" class="validate" required="">
+					<label for="sasia17">Sasia(€)</label>
+					</div>
+					</div>
+
+										<div class="row">
+				<div class="input-field col s6">
+					<input id="koment5" name="koment5" type="text" class="validate">
+					<label for="koment5">Koment</label>
+				</div>
+				</div>
+
+
+
+		 <strong>Investime në infrastrukturë - Rrjetin e Qasjes</strong>
+
+											<div class="row">
+				<div class="input-field col s6">
+					<input id="sasia18" name="sasia18" type="number" class="validate" required="">
+					<label for="sasia18">Sasia(€)</label>
+					</div>
+					</div>
+
+										<div class="row">
+				<div class="input-field col s6">
+					<input id="koment6" name="koment6" type="text" class="validate">
+					<label for="koment6">Koment</label>
+				</div>
+				</div>
+
+
+		 <strong>Investime në shërbime telekomunikuese</strong>
+
+
+											<div class="row">
+				<div class="input-field col s6">
+					<input id="sasia19" name="sasia19" type="number" class="validate" required="">
+					<label for="sasia19">Sasia(€)</label>
+					</div>
+
+										<div class="row">
+				<div class="input-field col s6">
+					<input id="koment7" name="koment7" type="text" class="validate">
+					<label for="koment7">Koment</label>
+				</div>
+				</div>
+
+
+
+		 <strong>TOTALI i investimeve</strong>
+
+											<div class="row">
+				<div class="input-field col s12">
+					<input id="totali25" name="totali25" type="number" class="validate" required="">
+					<label for="totali25">(Shumice + Pakice)</label>
+				</div>
+				</div>
+
+
+
+				<h4>Të dhënat mbi numrin e punëtorëve</h4>
+
+
+														 <div class="row">
+				<div class="input-field col s6">
+					<input id="punetore1" name="punetore1" type="number" class="validate" required="">
+					<label for="punetore1">Numri i punëtorëve me orar të plotë pune</label>
+				</div>
+				</div>
+
+
+			<div class="row">
+				<div class="input-field col s6">
+				<input id="punetore2" name="punetore2" type="number" class="validate" required="">
+					<label for="punetore2">Numri i punëtorëve me orar të pjesëshëm pune</label>
+				</div>
+				</div>
+
+
+														 <div class="row">
+				<div class="input-field col s6">
+					<input id="totali26" name="totali26" type="number" class="validate" required="">
+					<label for="totali26">TOTALI i të punësuarve</label>
+				</div>
+				</div>
+
+						 <div class="row">
+				<div class="input-field col s6">
+					<input id="koment8" name="koment8" type="text" class="validate">
+					<label for="koment8">Koment</label>
+				</div>
+				</div>
+
+<div class="alert alert-info">
+	<strong>SHËNIM: Të dërgohet diagrami i detajuar i rrjetit aktual duke përfshirë nyjet e qasjes dhe rrjetin backbone, në rast se ndryshon nga ai i dorëzuar në tremujorin paraprak.</strong>
+</div>
+
+
+
+	<button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+
 {% if mesazhi %}
-	<h2>{{ mesazhi }}</h2>
+		<h2>{{ mesazhi}}</h2>
 {% endif %}
 {% endblock form %}
